@@ -1,0 +1,3 @@
+sources:
+    nvim:
+        path: /Users/thomasmclean/.config/nvim/lua/config/keymaps.lua

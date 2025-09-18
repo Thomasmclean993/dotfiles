@@ -1,0 +1,12 @@
+{
+  "gtiConfigs": [
+    {
+      "key": "gti.install-uuid",
+      "value": "0e27ed99-aafc-46ee-8637-132dcf3182be"
+    },
+    {
+      "key": "gti.is-onboarded",
+      "value": "true"
+    }
+  ]
+}

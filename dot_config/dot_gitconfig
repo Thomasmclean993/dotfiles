@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file.
+[user]
+    name = Thomas McLean
+    email = Thomasmclean993@gmail.com
+[alias]
+    s = status
+    co = checkout
+    br = branch
+    cm = commit -m 
+    lg = log --online --graph --decorate --all

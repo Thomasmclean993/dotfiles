@@ -1,0 +1,180 @@
+% Nvim commands
+
+# Modes
+Esc                     # exit insert/visual mode
+i                       # insert before cursor
+I                       # insert at beginning of line
+a                       # append after cursor
+A                       # append at end of line
+o                       # open new line below, enter insert
+O                       # open new line above, enter insert
+
+# Saving & Quitting
+:w                      # save file
+:q                      # quit
+:wq                     # save and quit
+:q!                     # quit without saving
+:wa                     # write (save) all files
+:qa!                    # quit all without saving
+
+# Navigation
+h/j/k/l                 # left / down / up / right
+Ctrl-d / Ctrl-u         # half page down / up
+Ctrl-f / Ctrl-b         # full page forward / back
+gg / G                  # jump to top / bottom
+0                       # start of line
+^                       # first non-blank char
+$                       # end of line
+:f <word>               # search word in current buffer
+
+# Editing
+x                       # delete character
+dd                      # delete line
+yy                      # yank (copy) line
+p                       # paste after cursor
+P                       # paste before cursor
+u                       # undo
+Ctrl-r                  # redo
+
+# Visual Mode
+v                       # start visual mode
+V                       # start visual line mode
+Ctrl-v                  # visual block mode
+y                       # yank selection
+d                       # delete selection
+> / <                   # indent / un-indent
+=                       # reformat selection
+
+# Search & Replace
+/word                   # search 'word'
+n / N                   # next / previous search result
+:%s/old/new/g           # replace all 'old' with 'new'
+:%s/old/new/gc          # replace with confirmation
+
+# Windows & Tabs
+:split (:sp)            # horizontal split
+:vsplit (:vsp)          # vertical split
+Ctrl-w w                # cycle windows
+Ctrl-w h/j/k/l          # move left / down / up / right
+:tabnew                 # new tab
+:gt / :gT               # next / previous tab
+
+# Buffers
+:ls                     # list buffers
+:buffer <n>             # go to buffer <n>
+:bnext / :bprevious     # next / previous buffer
+:bd                     # delete (close) buffer
+
+# Useful Extras
+:set number             # show line numbers
+:set relativenumber     # relative line numbers
+:syntax on              # enable syntax highlighting
+:!<cmd>                 # run shell command from nvim
+
+# General
+<Space>                 # Disabled default (no-op in Normal/Visual)
+<Esc>                   # clear highlights (:noh)
+
+# Save / Quit
+<C-s> (n,v)             # save file
+<C-s> (i)               # leave insert & save
+<C-q> (n)               # quit file
+<C-BS> (n)              # force close buffer
+
+# Smart scroll & search centering
+<C-d>                   # half page down + center
+<C-u>                   # half page up + center
+n                       # search next + center
+N                       # search prev + center
+
+# Window splits
+<leader>v               # split vertical
+<leader>h               # split horizontal
+<leader>se              # equalize sizes
+<leader>xs              # close split
+
+# Navigate splits
+<C-k>                   # move up split
+<C-j>                   # move down split
+<C-h>                   # move left split
+<C-l>                   # move right split
+
+# Toggles / Editing
+<leader>lw              # toggle line wrap
+<leader>j               # replace word under cursor
+
+# Clipboard / yank
+<leader>y (n,v)         # yanks to system clipboard
+<leader>Y               # yank current line to clipboard
+<leader>yf              # copy filename to clipboard
+<leader>yl              # copy filename:line to clipboard
+
+# Telescope
+<leader>ff              # Telescope find files
+<leader>fg              # Telescope live grep
+<leader>fb              # Telescope buffers
+<leader>fh              # Telescope help tags
+
+# Insert mode tweaks
+jf (i)                  # quick escape to normal mode
+
+# Neotree
+-                       # close Neotree
+<leader><leader>        # update
+<leader><leader>q       # update & quit
+
+# FTerm
+<leader>tt (n,t)        # toggle floating terminal
+
+# Notes
+- <leader> = Space
+- <localleader> = '\'
+
+
+# Neovim Interactive Cheat Examples
+
+# Buffers
+:buffer {{buffer_number}}       # go to buffer number
+:bdelete {{buffer_number}}      # delete a specific buffer
+
+# Search & Replace
+:%s/{{search_pattern}}/{{replacement}}/g     # replace all
+:%s/{{search_pattern}}/{{replacement}}/gc    # replace with confirm
+
+# Run shell command
+:!{{command}}                   # run shell command
+
+# Telescope (choice prompt)
+:Telescope {{picker:find_files|live_grep|buffers|help_tags}}
+
+# NeoTree (choice prompt)
+:Neotree {{action:show|close|toggle}}
+
+# Split windows with choice
+{{split_type:vertical|horizontal}} split window
+# vertical => :vsplit
+# horizontal => :split
+
+# Yank visuals to system clipboard
+"+{{action:y|Y}}                # yank visually (+y or +Y)
+
+# Terminal
+:term {{cmd:bash|zsh|htop|python3}}   # open terminal running specific program
+
+# Format
+<leader>f # Format file
+
+# LSP 
+<leader>gd      # [G]oto [D]efinition
+<leader>gr      # [G]oto [R]eferences
+<leader>gI      # [G]oto [I]mplementation
+<leader>gD      # [G]oto [D]eclaration
+
+# Leader‑prefixed keymaps (assuming default <leader> = space)
+<leader>D  # Type [D]efinition
+<leader>ds # Document [S]ymbols
+<leader>ws # Workspace [S]ymbols
+<leader>cr # [R]e[n]ame
+<leader>ca # [C]ode [A]ction  (normal & visual)
+<leader>th # [T]oggle Inlay [H]ints
+

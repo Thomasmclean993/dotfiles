@@ -1,0 +1,8 @@
+[alias]
+    st = status         # alias 'git st' => 'git status'
+    co = checkout       # alias 'git co' => 'git checkout'
+    ci = commit         # alias 'git ci' => 'git commit'
+    br = branch         # alias 'git br' => 'git branch'
+    lg = log            # alias 'git lg' => 'git log'
+    df = diff           # alias 'git df' => 'git diff'
+    last = log -1 HEAD  # view last commit

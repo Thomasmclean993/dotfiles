@@ -1,0 +1,49 @@
+% tmux basics cheat sheet
+
+# Sessions
+tmux new -s mysession        # start a new session named 'mysession'
+tmux attach -t mysession     # attach to a session
+tmux ls                      # list all sessions
+tmux kill-session -t mysession # kill a specific session
+tmux detach                  # detach from session
+
+# Windows
+<C-b> c               # create new window
+<C-b> ,               # rename current window
+<C-b> w               # list windows
+<C-b> n / p           # next/previous window
+<C-b> &               # kill current window
+
+# Panes (prefix is usually Ctrl-b)
+<C-b> %               # split vertically (left/right)
+<C-b> "               # split horizontally (top/bottom)
+<C-b> <arrow key>     # move between panes
+<C-b> o               # cycle through panes
+<C-b> q               # show pane numbers
+<C-b> x               # kill pane
+<C-b> !               # break pane into new window
+
+# Resizing panes
+<C-b> :resize-pane -L 10   # shrink current pane left by 10
+<C-b> :resize-pane -R 10   # grow current pane right by 10
+<C-b> :resize-pane -U 5    # shrink current pane up by 5
+<C-b> :resize-pane -D 5    # grow current pane down by 5
+
+# Layouts
+<C-b> space           # cycle layouts
+<C-b> M-1             # even-horizontal
+<C-b> M-2             # even-vertical
+<C-b> M-3             # main-horizontal
+<C-b> M-4             # main-vertical
+<C-b> M-5             # tiled
+
+# Copy mode
+<C-b> [               # enter copy mode
+<C-b> ]               # paste copied text
+Space                 # (inside copy mode) start selection
+Enter                 # (inside copy mode) copy selection
+
+# Misc
+<C-b> ?               # list all key bindings
+<C-b> d               # detach from tmux session
+
