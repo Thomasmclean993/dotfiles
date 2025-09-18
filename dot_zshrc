@@ -1,0 +1,103 @@
+
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+
+# znap
+# https://github.com/marlonrichert/zsh-snap
+# -------------------------------------------------
+# Download Znap, if it's not there yet.
+[[ -r ~/Repos/znap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/Repos/znap
+source ~/Repos/znap/znap.zsh  # Start Znap
+
+# oh-my-zsh plugins
+znap source ohmyzsh/ohmyzsh lib/theme-and-appearance
+znap source ohmyzsh/ohmyzsh lib/clipboard
+znap source ohmyzsh/ohmyzsh lib/completion
+znap source ohmyzsh/ohmyzsh lib/key-bindings
+znap source ohmyzsh/ohmyzsh lib/git
+znap source ohmyzsh/ohmyzsh plugins/git
+znap source ohmyzsh/ohmyzsh plugins/history
+znap source ohmyzsh/ohmyzsh plugins/vi-mode
+znap source ohmyzsh/ohmyzsh plugins/tmux
+
+# zsh plugins
+znap source hlissner/zsh-autopair
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
+znap source zsh-users/zsh-completions
+
+source $ZSH/oh-my-zsh.sh
+
+# Load my dotfiles after
+# -------------------------------------------------
+for file in ~/dots/.*; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+unset file
+
+#export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+#export VI_MODE_SET_CURSOR=true
+#
+## Exports
+# -------------------------------------------------
+
+# Make nvim the default editor
+export EDITOR="nvim"
+
+# History settings for zsh
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=999999999
+export SAVEHIST=$HISTSIZE
+
+# Zsh history options
+setopt HIST_IGNORE_DUPS        # Don't save duplicate commands
+setopt HIST_IGNORE_ALL_DUPS    # Delete old duplicate entries
+setopt HIST_FIND_NO_DUPS       # Don't display duplicates when searching
+setopt HIST_SAVE_NO_DUPS       # Don't save duplicates to history file
+setopt HIST_REDUCE_BLANKS      # Remove unnecessary blanks
+setopt INC_APPEND_HISTORY      # Save commands immediately
+setopt SHARE_HISTORY           # Share history between sessions
+setopt HIST_EXPIRE_DUPS_FIRST  # Expire duplicates first when trimming
+setopt HIST_VERIFY             # Show command with history expansion before running
+
+# bat
+# https://github.com/sharkdp/bat
+export BAT_CONFIG_PATH="$HOME/.batconfig"
+
+# nnn
+# https://github.com/jarun/nnn
+export NNN_OPTS="dHe"
+export LC_COLLATE="C"
+
+export PATH="/opt/homebrew/bin:$PATH"  # For Apple Silicon Macs
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
+
+
+source ~/.config/.spaceshiprc.zsh
+
+mkcd() { mkdir -p "$1" && cd "$1"; }
+
+eval $(thefuck --alias)
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ~/.zshrc
+
+eval "$(starship init zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/thomasmclean/.lmstudio/bin"
+# End of LM Studio CLI section
+
