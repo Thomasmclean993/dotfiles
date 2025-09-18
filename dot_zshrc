@@ -67,7 +67,6 @@ setopt HIST_VERIFY             # Show command with history expansion before runn
 # https://github.com/sharkdp/bat
 export BAT_CONFIG_PATH="$HOME/.batconfig"
 
-# nnn
 # https://github.com/jarun/nnn
 export NNN_OPTS="dHe"
 export LC_COLLATE="C"
