@@ -58,3 +58,10 @@ chezmoi apply --dry-run --verbose ~/.claude/some-new-thing   # sanity check
 chezmoi apply ~/.claude/some-new-thing
 git add -A && git commit -m "add some-new-thing" && git push
 ```
+
+## TODO
+
+- [ ] Resolve drift between this repo and the live `~/.aerospace.toml` and
+      `~/.config/nvim` on this machine (`chezmoi status` shows pending
+      changes). Left alone for now — needs review before running a blanket
+      `chezmoi apply`.
