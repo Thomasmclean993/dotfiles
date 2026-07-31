@@ -1,0 +1,29 @@
+{
+  "enabledPlugins": {
+    "pdk@covermymeds-ai-dev-toolkit": true,
+    "aidbox-toolkit@covermymeds-ai-dev-toolkit": true,
+    "arb@covermymeds-ai-dev-toolkit": true,
+    "backstage-development@covermymeds-ai-dev-toolkit": true,
+    "cmm-engineering-practices@covermymeds-ai-dev-toolkit": true,
+    "cmm-ohio-onprem-tools@covermymeds-ai-dev-toolkit": true
+  },
+  "theme": "dark",
+  "model": "sonnet",
+  "permissions": {
+    "allow": [
+      "Bash(pip install *)",
+      "Bash(python *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(pytest *)",
+      "Read", "Write", "Edit"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force *)",
+      "Bash(git reset --hard *)",
+      "Read(.env)",
+      "Read(.env.*)"
+    ]
+  }
+}
