@@ -48,7 +48,7 @@ return {
       neotest.run.run(vim.fn.expand("%"))
     end, vim.tbl_extend("force", opts, { desc = "Run file tests" }))
 
-    map("n", "<leader>td", function()
+    map("n", "<leader>dn", function()
       neotest.run.run({ strategy = "dap" })
     end, vim.tbl_extend("force", opts, { desc = "Debug nearest test" }))
 
@@ -64,7 +64,7 @@ return {
       neotest.output.open({ enter = true })
     end, vim.tbl_extend("force", opts, { desc = "Show test output" }))
 
-    map("n", "<leader>tt", function()
+    map("n", "<leader>tp", function()
       neotest.summary.toggle()
     end, vim.tbl_extend("force", opts, { desc = "Toggle test summary panel" }))
   end,
