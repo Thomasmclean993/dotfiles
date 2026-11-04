@@ -1,0 +1,10 @@
+id = "local.workspace-layout"
+name = "Workspace Layout"
+version = "0.1.0"
+min_herdr_version = "0.7.0"
+description = "Open nvim, claude, and a terminal in new workspaces"
+platforms = ["macos"]
+
+[[events]]
+on = "workspace.created"
+command = ["sh", "setup.sh"]
